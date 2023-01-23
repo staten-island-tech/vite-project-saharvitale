@@ -1,100 +1,236 @@
-@import url(variables.css);
+html,
+body,
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  color: var(--primary);
+  background-color: var(--secondary);
+  font-family: monospace;
+}
+
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #dddee9;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #dddeed;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  --black: #000;
+  --light-pink: #f8edeb;
+  --dark-pink: #fae1dd;
+  --light-teal: #f8ad9d;
+  --dark-teal: #f08080;
+  --white: #ffffff;
  
+ 
+
+
+
+
+  /*Typography */
+  --h1: 7.594rem;
+  --h2: 5.063rem;
+  --h3: 3.375rem;
+  --h4: 2.25rem;
+  --h5: 1.5rem;
 }
+
+
+ /*intentions*/
+.warm {
+  --primary: var(--light-pink);
+  --secondary: var(--dark-pink);
+  --primaryaccent: var(--light-teal);
+  --secondaryaccent: var(--dark-teal);
+  /* --buttonBacc: var(--) */
+}
+
+
+.cool {
+  --primary: var(--light-teal);
+  --secondary: var(--dark-teal);
+  --primaryaccent: var(--light-pink);
+  --secondaryaccent: var(--dark-pink);
+}
+
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: var(--h1);
+  color: var(--secondaryaccent);
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+h2 {
+  font-size: var(--h2);
+}
+
+
+h3 {
+  font-size: var(--h3);
+}
+
+
+h4 {
+  font-size: var(--h4);
+}
+
+
+h5 {
+  font-size: var(--h5);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
   text-align: center;
+  background-color: transparent;
+}
+.filters{
+  color: var(--secondaryaccent);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+
+.iceCream,
+.somethingSmall,
+.cakes {
+  margin: 0rem;
+  align-items: center;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.hero{
+  color: var(--primaryaccent);
+  padding: 1.5rem;
 }
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.subhead {
+  display: block;
+  background-color: var(--primary);
 }
 
-.card {
-  padding: 2em;
+
+.display {
+  padding: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-.read-the-docs {
-  color: #888;
+
+.d-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 30vh;
+  width: 25%;
+  margin: 5rem;
+  background-color: var(--secondaryaccent);
+  border-radius: 35px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #ff0000;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.filters {
+  display: inline;
+  margin-left: 4rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+
+.btnA,
+.btnA:link,
+.btnA:visited,
+.btnB,
+.btnB:link,
+.btnB:visited,
+.btnC,
+.btnC:link,
+.btnC:visited,
+.btnAll,
+.btnAll:link,
+.btnAll:visited,
+.color,
+.color:link,
+.color:visited {
+  border: none;
+  display: inline;
+  text-align: center;
+  justify-content: space-around;
+  padding: 0.8rem;
+  margin: 1.5rem;
+  display: inline-block;
+  margin: 1rem auto;
+  border-radius: 15px;
+  font-size: 2rem;
+  color: var(--secondary);
+  transition: all 0.2s;
+  background-color: var(--secondaryaccent);
+}
+
+
+.btnAll:hover,
+.btnA:hover,
+.btnB:hover,
+.btnC:hover,
+.color:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 0.5rem rgba(0, 0, 0, 0.2);
+  background-color: var(--black);
+  color: var(--white);
+}
+
+
+.image{
+  height: 20vh;
+  background: transparent;
+}
+
+
+@media all and (max-width: 820px) {
+  /* iPad Air*/
+  .dish-card{
+    height: 40vh;
+    width: 40%;
   }
-  a:hover {
-    color: #959698;
+  .image{
+    height: 20vh;
   }
-  button {
-    background-color: #f9f9f9;
+
+
+}
+
+
+@media all and (max-width: 480px) {
+  /* iPphone 12 Pro*/
+  .dish-card{
+    height: 40vh;
+    width: 80%;
   }
+  h1{
+    font-size: 4rem;
+  }
+  h4{
+    font-size: 2rem;
+  }
+  .image{
+    height: 20vh;
+  }
+  .btnA,
+  .btnA:link,
+  .btnA:visited,
+  .btnB,
+  .btnB:link,
+  .btnB:visited,
+  .btnC,
+  .btnC:link,
+  .btnC:visited,
+  .btnAll,
+  .btnAll:link,
+  .btnAll:visited,
+  .color,
+  .color:link,
+  .color:visited {
+    font-size: 1.3rem;
+    padding: 0.4rem;
+  }
+
+
 }
